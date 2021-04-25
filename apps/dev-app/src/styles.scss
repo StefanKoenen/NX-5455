@@ -1,0 +1,41 @@
+// 3: Bootstrap Include
+// @import "assets/sass/theme/init";
+// @import "assets/sass/bootstrap/variables";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+
+
+// @import "assets/sass/bootstrap/bootstrap.scss";
+// @import "assets/sass/theme/core/include-base";
+
+/* You can add global styles to this file, and also import other style files */
+.m-badge.m-badge--rect {
+    border-radius: 0%;
+    letter-spacing: 0.6px;
+    padding: 1px 10px;
+}
+
+.loading-indicator {
+    display: none;
+}
+
+body.kt-page--loading .loading-indicator {
+    display: initial;
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>DevApp</title>
+	<base href="/" />
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<!-- Make the preconnect handshake from the font vendor of your choice -->
+	<link rel="preconnect" href="//fonts.googleapis.com/" crossorigin="">
+	<link id="apple-touch-icon" rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="theme-color" content="#1976d2">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+	</script>
+	<script>
+		var url = new URL(location.href);
+		if (url.searchParams.get('code') && url.searchParams.get('state')) {
+			location.href = '/#/public/auth/login/callback' + url.search;
+		}
+
+	</script>
+</head>
+
+<body>
+	<tm-root></tm-root>
+	<noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+
+<script>
+	var appVersion = document.body.outerHTML.match(/([\d+\.]*)\/main-es2015\..*?\.js/);
+	if (appVersion != null) {
+		document.getElementById('apple-touch-icon').href = `${appVersion[1]}/assets/icons/icon-192x192.png`;
+	}
+
+</script>
+<style>
+	@font-face {
+		font-family: "Metronic";
+		font-style: normal;
+		font-weight: normal;
+		src: url("assets/fonts/metronic/Metronic.eot?#iefix") format("embedded-opentype"), url("assets/fonts/metronic/Metronic.woff2") format("woff2"), url("assets/fonts/metronic/Metronic.woff") format("woff"), url("assets/fonts/metronic/Metronic.ttf") format("truetype"), url("assets/fonts/metronic/Metronic.svg#Metronic") format("svg");
+	}
+
+</style>
+<!--begin::Web font -->
+<script>
+	WebFontConfig = {
+		google: {
+			"families": ["Poppins:500&display=swap", "Roboto:300,400,500,600,700&display=swap",
+				"Source Code Pro:400&display=swap"
+			],
+		},
+		active: function() {
+			sessionStorage.fonts = true;
+		}
+	};
+
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js" async=""></script>
+<!--end::Web font -->
+
+</html>
